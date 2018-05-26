@@ -32,7 +32,7 @@ export const phones = [
   },
   {
     phoneId: 'pixel2',
-    features: ['touch focus', 'panorama', 'Auto HDR'],
+    features: ['touch focus', 'panorama', 'HDR'],
     isWaterProof: true
   }
 ];
@@ -40,11 +40,7 @@ export const phones = [
 
 So if want to add a water proof filter, the predicate would be `isWaterProof`.
 
-For an `HDR` filter, the predicate would be `contains(features, "HDR")`.
-
-> Check [filtreX](https://github.com/joewalnes/filtrex) to learn more what predicate you could write.
-
-> We copied filtreX code and generated the parser, so the building time is better.
+For an `HDR` filter, the predicate would be `features.includes("HDR")`.
 
 #### How to add bitmask filters
 After you add filterReducer to your state reducers, you should add the category for your filters first.
@@ -75,11 +71,11 @@ import {
   clearFilters
 } from 'redux-filters';
 // Activate water proof filter
-activateFilter({ category: 'features', filterId: 'waterProof' });
+activateFilter({ category: 'features', id: 'waterProof' });
 // Deactivate water proof filter
-deactivateFilter({ category: 'features', filterId: 'waterProof' });
+deactivateFilter({ category: 'features', id: 'waterProof' });
 // As the name suggest toggle filter state
-toggleFilter({ category: 'features', filterId: 'waterProof' });
+toggleFilter({ category: 'features', id: 'waterProof' });
 // Reset all filters to deactivated
 resetFilters();
 // Probably you don't need this, but you could use it to delete all filters

@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+import { qualifyMask } from 'bit-ops';
 import { fromJS } from 'immutable';
 import {
   DATA_BRANCH,
@@ -11,7 +12,6 @@ import {
   FILTER_MAYBE_DISABLED
 } from './constants';
 
-import { qualifyMask } from './bitops';
 const selectRootDomain = () => (state, props) =>
   // `filtersRootBranch` is where reducer live
   (props && props.filtersRootBranch && state.getIn(props.filtersRootBranch)) || state;
@@ -117,12 +117,12 @@ export const selectFiltersStatus = () =>
       const originalLength = originalData.size;
       const filteredLength = filteredData.size;
       return originalCount.map((filters, category) =>
-        filters.map((count, filterId) =>
+        filters.map((count, id) =>
           determineFilterState(
-            active.hasIn([category, filterId]),
+            active.hasIn([category, id]),
             count,
             originalLength,
-            filteredCount.getIn([category, filterId]),
+            filteredCount.getIn([category, id]),
             filteredLength
           )
         )
