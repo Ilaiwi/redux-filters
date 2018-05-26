@@ -1,0 +1,17 @@
+
+body {
+  padding: 25px;
+}
+button {
+  margin: 5px !important;
+}
+.outlined {
+  border-bottom: 1px black solid;
+}
+
+.filter-on {
+  background-color: cornflowerblue;
+}
+button:focus {
+  background-color: inherit !important;
+}

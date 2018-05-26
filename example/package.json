@@ -1,0 +1,29 @@
+{
+  "name": "example",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "http://ilaiwi.github.io/redux-filters",
+  "dependencies": {
+    "classname": "^0.0.0",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-list": "^0.8.8",
+    "react-redux": "^5.0.6",
+    "react-scripts": "1.0.17",
+    "redux": "^3.7.2",
+    "redux-act": "^1.5.0",
+    "redux-filters": "^1.0.0",
+    "reselect": "^3.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.2"
+  }
+}

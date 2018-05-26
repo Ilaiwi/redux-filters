@@ -6,4 +6,4 @@ dist
 .idea
 .DS_STORE
 coverage.lcov
-example
+example/node_modules
