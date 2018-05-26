@@ -37,7 +37,9 @@
     "build:main": "babel --copy-files --out-dir dist --ignore *.test.js src",
     "build:umd": "webpack --output-filename index.umd.js",
     "build:umd.min": "webpack --output-filename index.umd.min.js -p",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "build:example": "react-scripts example/build",
+    "deploy": "gh-pages -d example/build"
   },
   "dependencies": {
     "immutable": "^3.8.2",
@@ -59,12 +61,14 @@
     "eslint-config-prettier": "^2.4.0",
     "eslint-config-xo": "^0.18.2",
     "eslint-plugin-prettier": "^2.3.1",
+    "gh-pages": "^1.1.0",
     "ghooks": "1.2.1",
     "json-loader": "0.5.4",
     "mocha": "2.4.5",
     "npm-run-all": "1.7.0",
     "nyc": "6.4.0",
     "prettier": "^1.7.4",
+    "react-scripts": "^1.0.17",
     "rimraf": "2.5.2",
     "semantic-release": "^8.2.0",
     "webpack": "1.13.0"
